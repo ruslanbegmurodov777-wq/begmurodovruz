@@ -106,9 +106,9 @@ export default function Home() {
       </div>
       <div className="contact-home">
         <h2>Men bilan bog'lanish uchun bosing</h2>{" "}
-        <a className="contact-link" href="/contact">
+        <Link className="contact-link" to="/contact">
           bog'lanish
-        </a>
+        </Link>
       </div>
       <footer className="footer">
         <div className="footer-content">
