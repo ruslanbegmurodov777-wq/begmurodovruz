@@ -61,6 +61,7 @@
 @media (max-width: 783px) {
   .name {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-self: center;
