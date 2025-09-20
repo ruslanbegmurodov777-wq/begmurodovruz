@@ -475,6 +475,14 @@
     font-size: 30px;
     width: 60%;
   }
+   .name {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 95%; 
+    margin: 15px auto; 
+    gap: 15px;
+  }
 }
 .will-skills {
   display: grid;
