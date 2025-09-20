@@ -11,9 +11,6 @@ import diplom from "./img/diplom.jpg";
 export default function Home() {
   return (
     <div className="home page-container">
-      {/* <div class="shape shape1">
-        <img src="" alt="" />
-      </div> */}
       <div class="shape shape1">
         <img
           width="70"
