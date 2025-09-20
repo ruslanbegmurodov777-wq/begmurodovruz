@@ -1,0 +1,648 @@
+.home {
+  /* background: url("./img/Space-Background-Images.jpg");
+  background-size: cover; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  margin: 0;
+  min-height: 100vh;
+  background: url("./img/Space-Background-Images.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 100px; /* Extra space for navbar */
+  box-sizing: border-box;
+}
+.home-title {
+  color: #43095a;
+}
+.name img {
+  display: inline-block;
+  align-self: center;
+  justify-self: center;
+  grid-column: 1/2;
+  grid-row: 1/3;
+  margin: 1rem;
+  width: 95%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  max-width: 250px;
+}
+
+.name {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: 1fr 4fr;
+  width: 70%;
+  height: auto;
+  justify-self: center;
+  position: relative;
+  padding: 50px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1e1e2f, #252542);
+  color: white;
+  overflow: hidden;
+  margin: 20px auto;
+}
+@media (max-width: 800px) {
+  .name .developer-text,
+  .name .name-text,
+  .name .portfolio-text {
+    font-size: 18px !important;
+    padding: 0 !important;
+    margin: 7px !important;
+  }
+}
+/* Tablet responsive design - 780px and below */
+@media (max-width: 783px) {
+  .name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Override desktop positioning */
+  .name .developer-text,
+  .name .name-text,
+  .name .portfolio-text {
+    /* grid-column: 1/2 !important; */
+    margin: 0 !important;
+    align-self: center !important;
+    justify-self: center !important;
+    margin-top: 0 !important;
+  }
+
+  .name .developer-text {
+    grid-row: 2/3 !important;
+  }
+
+  .name .name-text {
+    grid-row: 4/5 !important;
+  }
+
+  .name .portfolio-text {
+    grid-row: 5/6 !important;
+  }
+
+  .name h1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .name .developer-text {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: center;
+    margin: 0;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .name img {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    width: 60%;
+    max-width: 250px;
+    margin: 0 auto;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .name > .name-text {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    text-align: center;
+    margin: 0;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .name > .portfolio-text {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    text-align: center;
+    margin: 5px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .name .developer-text span {
+    font-size: 28px !important;
+  }
+
+  .name .name-text span,
+  .name .portfolio-text span {
+    margin: 5px;
+    font-size: 22px !important;
+  }
+}
+
+/* Mobile responsive design */
+@media (max-width: 480px) {
+  .name {
+    width: 95%;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  .name h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .name img {
+    width: 50%;
+    max-width: 150px;
+    margin: 12px auto;
+  }
+
+  .name .developer-text span {
+    font-size: 20px !important;
+  }
+
+  .name .name-text span,
+  .name .portfolio-text span {
+    font-size: 16px !important;
+  }
+
+  .name .developer-text,
+  .name .name-text,
+  .name .portfolio-text {
+    margin: 10px 0;
+  }
+}
+
+.name::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#00f, #0ff, #00f);
+  animation: rotate 5s linear infinite;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.name > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  80% {
+    transform: rotate(360deg);
+  }
+}
+
+.name > * {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.name h1 {
+  color: cornflowerblue;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  grid-column: 1/3;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  margin: 0;
+}
+.name p {
+  font-family: fantasy;
+  margin: 1rem;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: end;
+  justify-self: end;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0ff; /* matnning asosiy rangi */
+  text-align: center;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+.name .developer-text,
+.name .name-text,
+.name .portfolio-text {
+  font-family: fantasy;
+  margin: 0.5rem;
+  font-weight: bold;
+  color: #0ff;
+  text-align: center;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+/* Desktop layout - stack vertically in right column */
+.name .developer-text {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: start;
+  justify-self: end;
+}
+
+.name .name-text {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: center;
+  justify-self: end;
+  margin-top: 60px;
+}
+
+.name .portfolio-text {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: end;
+  justify-self: end;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  }
+  to {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+  }
+}
+/*------------- ----bio--- end  -----------*/
+.home-about {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  margin: 3rem;
+  border-radius: 3px;
+  justify-self: center;
+  width: 80%;
+  height: auto;
+  background: linear-gradient(to right, #3293939e, #226ed1ad);
+  overflow: hidden;
+}
+/* fonni ajratib xiralashtirish */
+.home-about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("./img/harvard-university.jpg") center/cover no-repeat;
+  filter: blur(1px); /* fonni xiralashtiradi */
+  transform: scale(1.1); /* blur chetlarini yopadi */
+  z-index: -1; /* matn ustiga chiqmasin */
+}
+
+.about-fotos {
+  display: inline-block;
+  grid-column: 1/2;
+  grid-row: 1/4;
+  align-self: center;
+  justify-self: center;
+}
+.about-fotos img {
+  display: inline-block;
+  width: 44%;
+  height: 400px auto;
+  margin: 1%;
+}
+.about-fotos img:first-child {
+  width: 90%;
+  height: 400px auto;
+  margin: 2%;
+}
+@media (max-width: 780px) {
+  .home-about {
+    width: 95%;
+  }
+  .about-fotos img:nth-child(2),
+  .about-fotos img:nth-child(3) {
+    width: 42%;
+    height: auto;
+    /* margin: 1%; */
+    object-fit: cover;
+  }
+}
+.about-text h2 {
+  margin: 0;
+}
+.about-text {
+  align-self: center;
+  align-items: center;
+}
+.about-text p {
+  font-size: large;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.about-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1c1c7c, #0c0c40);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 74, 240, 0.3);
+  text-align: center;
+  max-width: 150px;
+}
+.about-link {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  width: 100%;
+}
+.about-btn:hover {
+  background: linear-gradient(135deg, #5a5af5, #7b7bf8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 74, 240, 0.4);
+}
+
+.about-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(74, 74, 240, 0.6);
+}
+
+.about-btns {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  align-self: center;
+  justify-self: center;
+}
+/* Har bir shapeni yaratish */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Shape 1 – katta doira */
+.shape1 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #0ff, #00f);
+  top: -30px;
+  left: -30px;
+  animation: move1 6s ease-in-out infinite alternate;
+}
+
+/* Shape 2 – kvadrat shakli */
+.shape2 {
+  width: 80px;
+  height: 80px;
+  background: conic-gradient(rgb(20, 106, 153), #ff0, rgb(20, 127, 146));
+  top: 50px;
+  left: 100px;
+  animation: move2 8s ease-in-out infinite alternate-reverse;
+}
+
+/* Shape 3 – kichik doira */
+.shape3 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #f90, #f0f);
+  bottom: 20px;
+  right: 30px;
+  animation: move3 5s ease-in-out infinite alternate;
+}
+
+/* Shape harakatlari */
+@keyframes move1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 30px) scale(1.2);
+  }
+  100% {
+    transform: translate(-20px, 50px) scale(0.9);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30px, -20px) rotate(180deg);
+  }
+  100% {
+    transform: translate(20px, 40px) rotate(360deg);
+  }
+}
+
+@keyframes move3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-20px, -10px) scale(1.3);
+  }
+  100% {
+    transform: translate(10px, 20px) scale(0.8);
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-link {
+    font-size: 30px;
+    width: 60%;
+  }
+}
+.will-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 8fr;
+  width: 85%;
+  height: auto;
+  background: linear-gradient(to right, #410a4c, #151b3ed8);
+  border-radius: 10px;
+  margin: 7%;
+  justify-items: center;
+  justify-self: center;
+
+  align-items: center;
+}
+.kino-skills {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-content: center;
+  width: 95%;
+  /* margin: 0 5%; */
+  height: 90%;
+  background: linear-gradient(145deg, #0a0f1c, #101a2c);
+  border-radius: 10px;
+}
+.kino-skills img {
+  width: 90%;
+  height: 50%;
+  border-radius: 10px;
+  contain: content;
+  object-fit: cover;
+}
+.akademiya-skills {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-content: center;
+  width: 95%;
+  /* margin: 0 5%; */
+  height: 90%;
+  background: linear-gradient(145deg, #0a0f1c, #101a2c);
+  border-radius: 10px;
+}
+.akademiya-skills img {
+  width: 90%;
+  height: 50%;
+  border-radius: 10px;
+  contain: content;
+  /* object-fit: cover; */
+  object-fit: contain;
+}
+.will-skills-title {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+.will-skills h1 {
+  padding: 0 !important;
+  margin: 0;
+  color: #1da7ca;
+  text-shadow: 2px 2px 5px rgb(199, 166, 166);
+}
+.skill-precent {
+  margin: 2px;
+}
+.will-skills p {
+  padding: 5px;
+}
+@media (max-width: 850px) {
+  .will-skills {
+    width: 95%;
+  }
+}
+@media (max-width: 680px) {
+  .will-skills {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr 10fr;
+  }
+  .will-skills-title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .kino-skills {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0;
+  }
+  .akademiya-skills {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin: 0;
+  }
+}
+
+.contact-home {
+  width: 75%;
+  height: 40vh;
+  justify-self: center;
+  background-color: rgba(0, 0, 255, 0.519);
+  background: url("./img/contact-bg.webp");
+  background-size: cover; /* rasmni butun blokni qoplashi uchun */
+  background-position: center; /* markazdan joylashsin */
+  border-radius: 10px; /* ixtiyoriy: burchaklarni yumaloqlash */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+@media (max-width: 800px) {
+  .contact-home {
+    width: 85%;
+  }
+}
+.contact-link {
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.853);
+  padding: 5px 4%;
+  font-size: 40px;
+  width: 50%;
+  height: auto;
+  background: linear-gradient(to bottom, #2b2b8e, #6262d8, #050541);
+  border-radius: 10px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+}
+.contact-link:hover,
+.contact-link:active {
+  color: rgb(149, 156, 156);
+  transform: translateY(5px);
+  box-shadow: 0 10px 13px rgba(203, 175, 175, 0.2);
+}
+@media (max-width: 600px) {
+  .contact-link {
+    font-size: 30px;
+  }
+}
+.contact-home h2 {
+  padding: 7%;
+  font-weight: 900;
+  font-family: "Lucida Grande", Geneva, Verdana, sans-serif;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.footer {
+  width: 100%;
+  /* background: linear-gradient(135deg, #0f0f1f, #1c1c2e); qoraroq fon */
+  color: #ccc;
+  padding: 30px 10px;
+  margin-top: 60px;
+  margin-bottom: 0;
+  text-align: center;
+  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.footer-content h2 {
+  margin: 0;
+  /* font-size: 20px; */
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+.footer-content p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.footer-content p:last-child {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #666;
+}

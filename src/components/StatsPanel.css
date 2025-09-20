@@ -1,0 +1,246 @@
+/* Umumiy stil */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0a0f1c; /* chuqur qora-ko‘k fon */
+  color: #e0e6f0;
+  overflow-x: hidden; /* scroll chiqmasin */
+}
+
+/* Stats panel asosiy qismi */
+.stats-panel {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #0f1629, #101a2c);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+/* Title */
+.stats-panel h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.stats-panel p {
+  text-align: center;
+  color: #9aa5c0;
+  margin-bottom: 30px;
+}
+
+/* Info cards (chap tomondagi statistikalar) */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.stats-card {
+  background: #121b33;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  background: #162240;
+}
+
+.stats-card h3 {
+  font-size: 26px;
+  color: #4db5ff;
+  margin-bottom: 8px;
+}
+
+.stats-card span {
+  font-size: 14px;
+  color: #aab4cf;
+}
+
+.stats-card .progress {
+  margin-top: 12px;
+  height: 6px;
+  background: #222b45;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.stats-card .progress div {
+  height: 100%;
+  background: linear-gradient(90deg, #4db5ff, #38e0b7);
+  border-radius: 6px;
+}
+
+/* Skills section */
+.skills {
+  margin-top: 30px;
+}
+
+.skills h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.skill {
+  margin-bottom: 16px;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.skill-bar {
+  height: 8px;
+  background: #1a2440;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #4db5ff, #38e0b7);
+  border-radius: 6px;
+}
+
+/* Developer Level (o‘ng taraf) */
+.dev-level {
+  background: #121b33;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.dev-level h4 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #4db5ff;
+}
+
+.dev-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.dev-tags span {
+  background: #1e2948;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #9aa5c0;
+}
+
+/* Developer cards */
+.dev-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+.dev-card {
+  background: linear-gradient(145deg, #0a0f1c, #101a2c);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  min-width: 120px;
+  transition: 0.3s;
+}
+
+.dev-card:hover {
+  transform: translateY(-4px);
+  background: #18223a;
+}
+
+.dev-card .meter {
+  width: 70px;
+  height: 70px;
+  border: 6px solid #1a2440;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  position: relative;
+}
+
+.dev-card .meter-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  border-top-color: #4db5ff;
+  transform: rotate(calc(var(--percent) * 3.6deg));
+}
+
+.dev-card .meter-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #e0e6f0;
+}
+
+/* Footer info */
+.dev-info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #9aa5c0;
+}
+
+.dev-info span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dev-info strong {
+  color: #4db5ff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stats-panel {
+    grid-template-columns: 1fr;
+  }
+}
+/* Meter container */
+.meter {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: conic-gradient(#00d0ff calc(var(--percent) * 1%), #1a2236 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+  position: relative;
+}
+
+/* Ichki qora doira (progress markazida teshik bo‘lishi uchun) */
+.meter::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #0f172a;
+  border-radius: 50%;
+}
+
+/* Label yozuv */
+.meter-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e6f6ff;
+}
